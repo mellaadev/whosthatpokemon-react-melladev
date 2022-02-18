@@ -12,13 +12,6 @@ function App() {
   const [ acertado, setAcertado ] = useState(false)
   const [ cargando, setCargando ] = useState(false)
 
-  const [loggedIn, setLoggedIn] = useState(null);
-
-  useEffect(() => {
-      const loggedUser = localStorage.getItem('user');
-      setLoggedIn(Boolean(loggedUser));
-    }, []);
-
   useEffect(() => {
 
       const obtenerPokemon = async () => {
@@ -39,21 +32,19 @@ function App() {
 
   return (
     <Layout>
-      { loggedIn !== null &&
-        <Router>
-          <Routes>
-            <Route path="/" element={<Inicio setInicio={setInicio} setCargando={setCargando}/>} />
-            <Route path="/play" element={<Juego 
-            pokemon={pokemon} 
-            setRespuesta={setRespuesta}
-            acertado={acertado}
-            setAcertado={setAcertado}
-            cargando={cargando}
-            setCargando={setCargando}
-            />} />
-          </Routes>
-        </Router>
-      }
+      <Router>
+        <Routes>
+          <Route path="/" element={<Inicio setInicio={setInicio} setCargando={setCargando}/>} />
+          <Route path="/play" element={<Juego 
+          pokemon={pokemon} 
+          setRespuesta={setRespuesta}
+          acertado={acertado}
+          setAcertado={setAcertado}
+          cargando={cargando}
+          setCargando={setCargando}
+          />} />
+        </Routes>
+      </Router>
     </Layout>
   );
 }

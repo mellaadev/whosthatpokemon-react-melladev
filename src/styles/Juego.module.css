@@ -5,7 +5,13 @@
     align-items: center;
     justify-content: center;
     gap: 5rem;
-    height: 77vh;
+}
+
+@media (min-width: 768px) {
+    .juego
+    {
+        height: 77vh;
+    }
 }
 
 .juego__nopokemon
