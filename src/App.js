@@ -1,24 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect }  from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from './components/Layout'
+import Inicio from './components/Inicio'
+import Juego from './components/Juego'
 
 function App() {
+
+  const [ pokemon, setPokemon ] = useState([])
+  const [ inicio, setInicio ] = useState(false)
+  const [ respuesta, setRespuesta ] = useState('')
+  const [ acertado, setAcertado ] = useState(false)
+  const [ cargando, setCargando ] = useState(false)
+
+  const [loggedIn, setLoggedIn] = useState(null);
+
+  useEffect(() => {
+      const loggedUser = localStorage.getItem('user');
+      setLoggedIn(Boolean(loggedUser));
+    }, []);
+
+  useEffect(() => {
+
+      const obtenerPokemon = async () => {
+          var r = Math.random();
+          const numero = Math.floor(r * (1 - 898) + 898);
+
+          const url = `https://pokeapi.co/api/v2/pokemon/${numero}`
+          
+          const respuesta = await fetch(url)
+          const resultado = await respuesta.json()
+
+          setPokemon(resultado)
+          setCargando(true)
+      } 
+
+      obtenerPokemon()
+  }, [inicio, respuesta])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      { loggedIn !== null &&
+        <Router>
+          <Routes>
+            <Route path="/" element={<Inicio setInicio={setInicio} setCargando={setCargando}/>} />
+            <Route path="/play" element={<Juego 
+            pokemon={pokemon} 
+            setRespuesta={setRespuesta}
+            acertado={acertado}
+            setAcertado={setAcertado}
+            cargando={cargando}
+            setCargando={setCargando}
+            />} />
+          </Routes>
+        </Router>
+      }
+    </Layout>
   );
 }
 

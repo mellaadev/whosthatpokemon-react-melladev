@@ -1,0 +1,70 @@
+.header
+{
+    background-color: var(--white);
+    box-shadow: 2px 0px 10px rgb(0 0 0 / .4);
+}
+
+.barra
+{
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra__enlace
+{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra__brand
+{
+    color: var(--blue);
+    font-size: 4rem;
+}
+
+.barra__image
+{
+    width: 100px;
+}
+
+@media (min-width: 768px) {
+    .barra__image
+    {
+        width: 150px;
+    }
+}
+
+
+.barra__option
+{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: var(--white);
+    background-color: rgb(0 0 0 / .3);
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.barra__option:hover
+{
+    cursor: pointer;
+}
+
+.barra__optiontext
+{
+    display: none;
+    transition: all .3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .barra__optiontext
+    {
+        display: block;
+    }
+}

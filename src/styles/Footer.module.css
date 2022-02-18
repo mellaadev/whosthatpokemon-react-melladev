@@ -1,0 +1,55 @@
+.footer
+{
+    background-color: var(--dark);
+}
+
+.footer__contenido
+{
+    padding: 2rem 0;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer__brand
+{
+    color: var(--white);
+    font-size: 4rem;
+}
+
+.footer__enlace
+{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__image
+{
+    width: 100px;
+}
+
+@media (min-width: 768px) {
+    .footer__image
+    {
+        width: 150px;
+    }
+}
+
+.footer__separador
+{
+    content: '';
+    width: 200px;
+    height: 2px;
+    background-color: var(--white);
+    opacity: .5;
+}
+
+.footer__copy a
+{
+    color: var(--white);
+}

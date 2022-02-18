@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root
+{
+    --blue: #2468B1;
+    --yellow:#FCCF00;  
+    --red: #FC5D5D;
+    --green: #0AD50D;
+    --dark: #111111;
+    --white: #FFFFFF;
+
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --bold: 700;
+}
+
+html
+{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before
+{
+    box-sizing: inherit;
+}
+
+body
+{
+    font-weight: var(--regular);
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    background-color: var(--white);
+    color: var(--dark);
+
+    transition: all .3s ease;
+}
+
+
+h1,
+h2,
+h3,
+p
+{
+    margin: 0;
+}
+
+h1
+{
+    font-weight: var(--bold);
+    font-size: 5.2rem;
+}
+
+h2,
+h3
+{
+    font-weight: var(--medium);
+    font-size: 3.4rem;
+}
+
+a
+{
+    text-decoration: none;
+    font-weight: var(--medium);
+}
+
+.contenedor
+{
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.btn
+{
+    background-color: var(--white);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    padding: 1rem 6rem;
+    font-weight: var(--bold);
+    border: none;
+    outline: none;
+    box-shadow:inset 0px -6px 0px rgb(230 230 230 / .7);
+    border-radius: 6px;
+    margin: 5rem auto 0 auto;
+
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover
+{
+    cursor: pointer;
+}
+
+.btn:active
+{
+    box-shadow:inset 0px -2px 0px rgb(230 230 230 / .7);
+    transform: translateY(4px);
+}
+
+.btn-jugar
+{
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.btn-enviar
+{
+    background-color: var(--blue);
+    color: var(--white);
+}

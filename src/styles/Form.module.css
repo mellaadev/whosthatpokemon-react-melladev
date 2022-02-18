@@ -1,0 +1,27 @@
+.form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__input
+{
+    background-color: transparent;
+    color: var(--dark);
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 3px solid var(--blue);
+    outline: none;
+    margin-top: 5rem;
+}
+
+.form__error
+{
+    color: var(--white);
+    background-color: var(--red);
+    padding: 1rem 3rem;
+    border-radius: 1.6rem;
+    margin-top: 3rem;
+}
