@@ -14,14 +14,14 @@ const Juego = ({ pokemon, setRespuesta, acertado, setAcertado, cargando, setCarg
             setNombre(pokemon.species.name)
             setCargando(false)
         }, 2000);
-    }, [pokemon])
+    }, [pokemon, setCargando])
 
   return (
     <main className={`contenedor ${styles.juego}`}>
         {cargando ? (<Spinner />) : 
         (
             <>
-                <img src={imagen} className={acertado ? styles.juego__pokemon : styles.juego__nopokemon}/>
+                <img src={imagen} className={acertado ? styles.juego__pokemon : styles.juego__nopokemon} alt={`${nombre}'s pic`}/>
 
                 <Formulario 
                     nombre={nombre}

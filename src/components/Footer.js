@@ -11,7 +11,7 @@ const Footer = () => {
                 <h1 className={styles.footer__brand}>?</h1>
             </a>
             <div className={styles.footer__separador}></div>
-            <p className={styles.footer__copy}>Developed with ❤️ by <a href='https://franmella.com' target='_blank'>Fran Mella</a></p>
+            <p className={styles.footer__copy}>Developed with ❤️ by <a href='https://franmella.com' target='_blank' rel='noreferrer noopener'>Fran Mella</a></p>
         </div>
     </footer>
   )
