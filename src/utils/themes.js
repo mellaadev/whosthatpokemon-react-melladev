@@ -18,4 +18,4 @@ function keepTheme() {
 module.exports = {
     setTheme,
     keepTheme
-  }
+}

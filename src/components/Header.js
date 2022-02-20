@@ -27,7 +27,7 @@ const Header = ({ setDark }) => {
             setTogClass('light')
             setDark(false)
         }
-    }, [theme])
+    }, [theme, setDark])
 
     return (
         <header className={`${styles.header}`}>
