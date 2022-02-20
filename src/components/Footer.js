@@ -3,7 +3,7 @@ import styles from '../styles/Footer.module.css'
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} theme-light`}>
         <div className={`contenedor ${styles.footer__contenido}`}>
             <a href='/' className={styles.footer__enlace}>
                 <h1 className={styles.footer__brand}>Who's that</h1>

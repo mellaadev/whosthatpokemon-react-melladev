@@ -1,16 +1,24 @@
 import React, { useState, useEffect }  from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { keepTheme } from './utils/themes'
+
 import Layout from './components/Layout'
 import Inicio from './components/Inicio'
 import Juego from './components/Juego'
 
 function App() {
 
+  useEffect(() => {
+    keepTheme();
+  })
+
   const [ pokemon, setPokemon ] = useState([])
   const [ inicio, setInicio ] = useState(false)
   const [ respuesta, setRespuesta ] = useState('')
   const [ acertado, setAcertado ] = useState(false)
   const [ cargando, setCargando ] = useState(false)
+  const [ dark, setDark ] = useState(false)
 
   useEffect(() => {
 
@@ -31,7 +39,9 @@ function App() {
   }, [inicio, respuesta])
 
   return (
-    <Layout>
+    <Layout
+    setDark={setDark}
+    >
       <Router>
         <Routes>
           <Route path="/" element={<Inicio setInicio={setInicio} setCargando={setCargando}/>} />
@@ -42,6 +52,7 @@ function App() {
           setAcertado={setAcertado}
           cargando={cargando}
           setCargando={setCargando}
+          dark={dark}
           />} />
         </Routes>
       </Router>

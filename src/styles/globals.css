@@ -6,14 +6,26 @@
     --yellow:#FCCF00;  
     --red: #FC5D5D;
     --green: #0AD50D;
-    --dark: #111111;
-    --white: #FFFFFF;
 
     --fuentePrincipal: 'Roboto', sans-serif;
     --light: 300;
     --regular: 400;
     --medium: 500;
     --bold: 700;
+}
+
+.theme-light
+{
+    --dark: #111111;
+    --white: #FFFFFF;
+    --darkfooter: #111111;
+}
+
+.theme-dark
+{
+    --dark: #FFFFFF;
+    --white: #111111;
+    --darkfooter: #111111;
 }
 
 html
@@ -107,11 +119,11 @@ a
 .btn-jugar
 {
     background-color: var(--green);
-    color: var(--white);
+    color: #FFF;
 }
 
 .btn-enviar
 {
     background-color: var(--blue);
-    color: var(--white);
+    color: #FFF;
 }

@@ -68,3 +68,19 @@
         display: block;
     }
 }
+
+.barra__option2
+{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: #fff;
+    background-color: rgb(255 255 255 / .3);
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.barra__option2:hover
+{
+    cursor: pointer;
+}

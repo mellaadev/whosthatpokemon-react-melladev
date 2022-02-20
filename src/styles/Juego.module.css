@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     gap: 5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -17,7 +19,8 @@
 .juego__nopokemon
 {
     width: 400px;
-    filter: brightness(0)
+    filter: brightness(0);
+    z-index: 2;
 }
 
 .juego__pokemon
@@ -25,6 +28,7 @@
     width: 400px;
     filter: brightness(1);
     animation: aclarar .5s forwards;
+    z-index: 2;
 }
 
 @keyframes aclarar {
@@ -37,4 +41,32 @@
     {
         filter: brightness(1);
     }
+}
+
+.juego__circulo
+{
+    content: '';
+    background-color: #FFF;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    position: absolute;
+    filter: blur(15rem);
+    top: 20rem;
+    left: 45rem;
+    z-index: 0;
+}
+
+.juego__circulo2
+{
+    content: '';
+    background-color: var(--blue);
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    top: 15rem;
+    left: 30rem;
+    position: absolute;
+    filter: blur(15rem);
+    z-index: -1;
 }
